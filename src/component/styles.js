@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 130,
     padding: 10,
     shadowColor: "#000",
     shadowOffset: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
 
-  bedrooms: {
+  type: {
     marginVertical: 10,
     color: '#5b5b5b',
   },

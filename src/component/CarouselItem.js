@@ -10,22 +10,21 @@ const CarouselItem = (props) => {
   return (
     <View style={[styles.container, { width: width - 60}]}>
       <View style={styles.innerContainer}>
-        <View style={{flex: 1, marginHorizontal: 10, height: 120}}>
+        <View style={{flex: 1, marginHorizontal: 10, height: 100}}>
 
-          {/* Bed & Bedroom  */}
-          <Text style={styles.bedrooms}>
-            {post.bed} bed {post.bedroom} bedroom
+          {/* Building Type */}
+          <Text style={styles.type}>
+            {post.building_type}
           </Text>
 
           {/* Type & Description */}
-          <Text style={styles.description} numberOfLines={2}>
-            {post.type}. {post.title}
+          <Text style={styles.description}>
+            Area Size: {post.area}
           </Text>
 
-          {/*  Old price & new price */}
+          {/*  Price */}
           <Text style={styles.prices}>
-            <Text style={styles.price}>${post.newPrice} </Text>
-            / night
+            <Text style={styles.price}> NT${post.price} </Text>
           </Text>
         </View>
       </View>

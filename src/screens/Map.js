@@ -4,7 +4,7 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from '../component/CustomMarker';
 import CarouselItem from '../component/CarouselItem';
 
-import places from '../../data/feed'
+import places from '../../data/building'
 
 const Map = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
@@ -27,18 +27,21 @@ const Map = (props) => {
         ref={map}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
-         latitude: 28.3279822,
-         longitude: -16.5124847,
+         latitude: 25.0627177982732,
+         longitude: 121.516657310173,
          latitudeDelta: 0.8,
          longitudeDelta: 0.8,
         }}
      >
         {places.map (place => (
             <CustomMarker
-            coordinate={place.coordinate}
-            price={place.newPrice}
-            isSelected={place.id == selectedPlaceId}
-            onPress={() => setSelectedPlaceId(place.id)}
+            coordinate={{
+                longitude: place.longitude,
+                latitude: place.latitude,
+               }}
+            price={place.price}
+            isSelected={place.building_id == selectedPlaceId}
+            onPress={() => setSelectedPlaceId(place.building_id)}
             />)
         )}
      </MapView>
