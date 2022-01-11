@@ -24,7 +24,7 @@ const CarouselItem = (props) => {
 
           {/*  Price */}
           <Text style={styles.prices}>
-            <Text style={styles.price}> NT${post.price} </Text>
+            <Text style={styles.price}>NT${post.price} </Text>
           </Text>
         </View>
       </View>

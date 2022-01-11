@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { View, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import CustomMarker from '../component/CustomMarker';
-import CarouselItem from '../component/CarouselItem';
+import CustomMarker from '../../component/CustomMarker';
+import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../data/building'
+import places from '../../../data/beitou'
 
-const Map = (props) => {
+export default function BeitouMap () {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -17,12 +17,12 @@ const Map = (props) => {
         if (!selectedPlaceId  || !flatlist) {
             return;
           }
-        const index = places.findIndex(place => place.id === selectedPlaceId)
+        const index = places.findIndex(place => place.building_id === selectedPlaceId)
         flatlist.current.scrollToIndex({index})
     }, [selectedPlaceId])
 
     return (
-    <View sty le={{width:'100%', height: '100%'}}>
+    <View style={{width:'100%', height: '100%'}}>
      <MapView style={{width:'100%', height: '100%'}}
         ref={map}
         provider={PROVIDER_GOOGLE}
@@ -59,6 +59,4 @@ const Map = (props) => {
      </View>
    </View>
     )
-}
-
-export default Map;
+};
