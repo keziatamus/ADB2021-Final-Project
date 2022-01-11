@@ -4,9 +4,9 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/zhongzheng'
+import places from '../../../data/location/neihu'
 
-export default function ZhongzhengMap () {
+export default function NeihuMap () {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();

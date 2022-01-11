@@ -4,9 +4,9 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/xinyi'
+import places from '../../../data/location/datong'
 
-export default function XinyiMap () {
+export default function DatongMap () {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();

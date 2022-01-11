@@ -1,7 +1,6 @@
 import React from 'react';
 import {View,Text,StyleSheet, Dimensions} from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
-import SelectMultiple from 'react-native-select-multiple';
 
 const environment = [{
     label: 'School',
@@ -34,17 +33,18 @@ export default class Home extends React.Component {
                 <Text style={{
                     fontFamily:"ExtraBold",
                     fontSize:24,
-                    marginTop:50
+                    marginTop:50,
+                    padding: 5
                 }}>Find your best house</Text>
 
                 <View style={{flexDirection:'row', flexWrap:'wrap'}}>
-                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 10}}>Location</Text>
+                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 10, marginHorizontal: 5}}>Location</Text>
                 <TouchableOpacity 
                     onPress={()=>this.props.navigation.navigate('Map')}>
-                    <Text style={{fontFamily:"Regular", fontSize:15, marginVertical: 15, marginLeft: 200}}>View all</Text>
+                    <Text style={{fontFamily:"Regular", fontSize:15, marginVertical: 15, marginLeft: 180}}>View all</Text>
                     </TouchableOpacity>
                 
-                <View style={{flexDirection:'row', flexWrap:'wrap', marginBottom: 20}}>
+                <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
                 <View style={styles.box}>
                     <TouchableOpacity 
                     onPress={()=>this.props.navigation.navigate('BeitouMap')}>
@@ -131,12 +131,54 @@ export default class Home extends React.Component {
                 </View>
                 </View>
 
-                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 20}}>Query</Text>
-                    <SelectMultiple
-                        items={environment}
-                        selectedItems={this.state.selectedOption}
-                        onSelectionsChange={this.onSelectionsChange} />
-                
+                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 5, marginHorizontal: 5}}>Query</Text>
+
+                <Text style={styles.object}>Public park</Text>
+                <Text style={styles.description}>Find buildings with park within:</Text>
+                <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}>100 m</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}>300 m</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}>500 m</Text>
+                    </TouchableOpacity>
+                </View>
+                </View>
+
+                <Text style={styles.object}>MRT Station</Text>
+                <Text style={styles.description}>Find buildings with MRT station within:</Text>
+                <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}>100 m</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}> 300 m</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    <Text style={styles.text}> 500 m</Text>
+                    </TouchableOpacity>
+                </View>
+                </View>
+
                 <View style={styles.button}>
                     <TouchableOpacity 
                     onPress={()=>this.props.navigation.navigate('Result')}>
@@ -146,7 +188,7 @@ export default class Home extends React.Component {
                             fontSize:15,
                             padding:10,
                             textAlign:'center'
-                        }}>Search</Text>
+                        }}>Find more</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -177,12 +219,22 @@ const styles = StyleSheet.create({
         padding:10,
         textAlign:'center'
   },
+    object: {
+        fontFamily:"Medium", 
+        fontSize:16, 
+        marginVertical: 5,
+        marginHorizontal: 5
+    },
+    description: {
+        fontFamily:"Regular", 
+        fontSize:15,
+        marginHorizontal: 5
+    },
     button: {
         backgroundColor:"#FFF",
         height:40,
-        width:300,                        
+        width: 340,                        
         borderRadius:20,
-        marginTop: 30,
         alignSelf:'center'
     }
   })
