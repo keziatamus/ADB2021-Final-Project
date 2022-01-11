@@ -6,9 +6,10 @@ import { Ionicons } from '@expo/vector-icons';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/location/neihu'
+import places from '../../../data/object/park_100'
+import { exp } from 'react-native/Libraries/Animated/Easing';
 
-const NeihuMap = (props) => {
+const Park100 = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -53,7 +54,6 @@ const NeihuMap = (props) => {
          ref={flatlist}
          data={places}
          renderItem={({item}) => <CarouselItem post={item}/>}
-
          onScrollToIndexFailed={({
             index,
             averageItemLength,
@@ -76,4 +76,4 @@ const NeihuMap = (props) => {
     )
 };
 
-export default NeihuMap;
+export default Park100;

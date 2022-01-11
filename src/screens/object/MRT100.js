@@ -6,9 +6,9 @@ import { Ionicons } from '@expo/vector-icons';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/location/neihu'
+import places from '../../../data/object/mrt_100'
 
-const NeihuMap = (props) => {
+const MRT100 = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -35,7 +35,6 @@ const NeihuMap = (props) => {
          longitudeDelta: 0.3,
         }}
      >
-         
         {places.map (place => (
             <CustomMarker
             coordinate={{
@@ -76,4 +75,4 @@ const NeihuMap = (props) => {
     )
 };
 
-export default NeihuMap;
+export default MRT100;

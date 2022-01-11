@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { View, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import CustomMarker from '../../component/CustomMarker';
-import CarouselItem from '../../component/CarouselItem';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+import CustomMarker from '../component/CustomMarker'
+import CarouselItem from '../component/CarouselItem';
 
-import places from '../../../data/building'
+import places from '../../data/building'
 
-export default function Map () {
+const Map = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -22,15 +24,16 @@ export default function Map () {
     }, [selectedPlaceId])
 
     return (
+        
     <View style={{width:'100%', height: '100%'}}>
-     <MapView style={{width:'100%', height: '100%'}}
+    <MapView style={{width:'100%', height: '100%'}}
         ref={map}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
          latitude: 25.0627177982732,
          longitude: 121.516657310173,
-         latitudeDelta: 0.8,
-         longitudeDelta: 0.8,
+         latitudeDelta:  0.3,
+         longitudeDelta: 0.3,
         }}
      >
         {places.map (place => (
@@ -50,6 +53,17 @@ export default function Map () {
          ref={flatlist}
          data={places}
          renderItem={({item}) => <CarouselItem post={item}/>}
+         onScrollToIndexFailed={({
+            index,
+            averageItemLength,
+          }) => {
+            // Layout doesn't know the exact location of the requested element.
+            // Falling back to calculating the destination manually
+            flatlist.current?.scrollToOffset({
+              offset: index * averageItemLength,
+              animated: true,
+            });
+          }}
          horizontal
          showsHorizontalScrollIndicator={false}
          snapToInterval={width - 60}
@@ -60,3 +74,5 @@ export default function Map () {
    </View>
     )
 };
+
+export default Map;

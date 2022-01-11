@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, useWindowDimensions, Pressable } from "react-native";
 import styles from './styles.js';
-import { useNavigation } from '@react-navigation/native';
 
 const CarouselItem = (props) => {
 

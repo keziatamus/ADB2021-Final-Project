@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { View, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/location/zhongshan'
+import places from '../../../data/object/park_500'
 
-export default function ZhongshanMap () {
+const Park500 = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -29,10 +31,11 @@ export default function ZhongshanMap () {
         initialRegion={{
          latitude: 25.0627177982732,
          longitude: 121.516657310173,
-         latitudeDelta: 0.8,
-         longitudeDelta: 0.8,
+         latitudeDelta: 0.3,
+         longitudeDelta: 0.3,
         }}
      >
+          
         {places.map (place => (
             <CustomMarker
             coordinate={{
@@ -50,6 +53,18 @@ export default function ZhongshanMap () {
          ref={flatlist}
          data={places}
          renderItem={({item}) => <CarouselItem post={item}/>}
+         
+         onScrollToIndexFailed={({
+            index,
+            averageItemLength,
+          }) => {
+            // Layout doesn't know the exact location of the requested element.
+            // Falling back to calculating the destination manually
+            flatlist.current?.scrollToOffset({
+              offset: index * averageItemLength,
+              animated: true,
+            });
+          }}
          horizontal
          showsHorizontalScrollIndicator={false}
          snapToInterval={width - 60}
@@ -60,3 +75,5 @@ export default function ZhongshanMap () {
    </View>
     )
 };
+
+export default Park500;

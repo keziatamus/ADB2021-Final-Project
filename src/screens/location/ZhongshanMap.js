@@ -6,9 +6,9 @@ import { Ionicons } from '@expo/vector-icons';
 import CustomMarker from '../../component/CustomMarker';
 import CarouselItem from '../../component/CarouselItem';
 
-import places from '../../../data/location/neihu'
+import places from '../../../data/location/zhongshan'
 
-const NeihuMap = (props) => {
+const ZhongshanMap = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
     const flatlist= useRef();
@@ -35,7 +35,6 @@ const NeihuMap = (props) => {
          longitudeDelta: 0.3,
         }}
      >
-         
         {places.map (place => (
             <CustomMarker
             coordinate={{
@@ -53,7 +52,6 @@ const NeihuMap = (props) => {
          ref={flatlist}
          data={places}
          renderItem={({item}) => <CarouselItem post={item}/>}
-
          onScrollToIndexFailed={({
             index,
             averageItemLength,
@@ -76,4 +74,4 @@ const NeihuMap = (props) => {
     )
 };
 
-export default NeihuMap;
+export default ZhongshanMap;

@@ -131,26 +131,26 @@ export default class Home extends React.Component {
                 </View>
                 </View>
 
-                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 5, marginHorizontal: 5}}>Query</Text>
+                <Text style={{fontFamily:"ExtraBold", fontSize:18, marginVertical: 10, marginHorizontal: 5}}>Query</Text>
 
                 <Text style={styles.object}>Public park</Text>
                 <Text style={styles.description}>Find buildings with park within:</Text>
                 <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('Park100')}>
                     <Text style={styles.text}>100 m</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('Park300')}>
                     <Text style={styles.text}>300 m</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('Park500')}>
                     <Text style={styles.text}>500 m</Text>
                     </TouchableOpacity>
                 </View>
@@ -161,35 +161,45 @@ export default class Home extends React.Component {
                 <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('MRT100')}>
                     <Text style={styles.text}>100 m</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('MRT300')}>
                     <Text style={styles.text}> 300 m</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('XinyiMap')}>
+                    onPress={()=>this.props.navigation.navigate('MRT500')}>
                     <Text style={styles.text}> 500 m</Text>
                     </TouchableOpacity>
                 </View>
                 </View>
 
-                <View style={styles.button}>
+                <Text style={styles.object}>School</Text>
+                <Text style={styles.description}>Find buildings with school level:</Text>
+                <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
+                <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('Result')}>
-                    <Text 
-                    style={{color:"#000",
-                            fontFamily:"SemiBold",
-                            fontSize:15,
-                            padding:10,
-                            textAlign:'center'
-                        }}>Find more</Text>
+                    onPress={()=>this.props.navigation.navigate('MRT100')}>
+                    <Text style={styles.text}>國小</Text>
                     </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('國中')}>
+                    <Text style={styles.text}>國中</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.box}>
+                    <TouchableOpacity 
+                    onPress={()=>this.props.navigation.navigate('MRT500')}>
+                    <Text style={styles.text}>高中</Text>
+                    </TouchableOpacity>
+                </View>
                 </View>
 
             </ScrollView>
