@@ -13,6 +13,7 @@ import WenshanMap from '../screens/location/WenshanMap';
 import XinyiMap from '../screens/location/XinyiMap';
 import ZhongshanMap from '../screens/location/ZhongshanMap';
 import ZhongzhengMap from '../screens/location/ZhongzhengMap';
+import NangangMap from '../screens/location/NangangMap';
 import MRT100 from '../screens/object/MRT100';
 import MRT300 from '../screens/object/MRT300';
 import MRT500 from '../screens/object/MRT500';
@@ -40,6 +41,10 @@ const AppNavigator = createStackNavigator({
     XinyiMap:{screen:XinyiMap},
     ZhongshanMap:{screen:ZhongshanMap},
     ZhongzhengMap:{screen:ZhongzhengMap},
+    NangangMap:{screen:NangangMap, 
+        navigationOptions: {
+        headerTitle:'',
+      },},
     MRT100:{screen:MRT100},
     MRT300:{screen:MRT300},
     MRT500:{screen:MRT500},

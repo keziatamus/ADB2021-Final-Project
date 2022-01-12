@@ -2,17 +2,6 @@ import React from 'react';
 import {View,Text,StyleSheet, Dimensions} from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
-const environment = [{
-    label: 'School',
-    value: '1'
-  }, {
-    label: 'Park',
-    value: '2'
-  }, {
-    label: 'MRT Station',
-    value: '3'
-  }]
-
 const config = {
     deviceWidth: Dimensions.get('window').width,
     deviceHeight: Dimensions.get('window').height
@@ -103,7 +92,7 @@ export default class Home extends React.Component {
 
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('Detail')}>
+                    onPress={()=>this.props.navigation.navigate('NangangMap')}>
                     <Text style={styles.text}>Nangang</Text>
                     </TouchableOpacity>
                 </View>
