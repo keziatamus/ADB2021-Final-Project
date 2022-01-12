@@ -184,19 +184,19 @@ export default class Home extends React.Component {
                 <View style={{flexDirection:'row', flexWrap:'wrap', alignContent:'center', marginBottom: 20}}>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('MRT100')}>
+                    onPress={()=>this.props.navigation.navigate('Primary_School')}>
                     <Text style={styles.text}>國小</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('國中')}>
+                    onPress={()=>this.props.navigation.navigate('Secondary_School')}>
                     <Text style={styles.text}>國中</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
                     <TouchableOpacity 
-                    onPress={()=>this.props.navigation.navigate('MRT500')}>
+                    onPress={()=>this.props.navigation.navigate('High_School')}>
                     <Text style={styles.text}>高中</Text>
                     </TouchableOpacity>
                 </View>

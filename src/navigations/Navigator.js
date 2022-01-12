@@ -19,6 +19,9 @@ import MRT500 from '../screens/object/MRT500';
 import Park100 from '../screens/object/Park100';
 import Park300 from '../screens/object/Park300';
 import Park500 from '../screens/object/Park500';
+import Primary_School from '../screens/object/Primary_School';
+import Secondary_School from '../screens/object/Secondary_School';
+import High_School from '../screens/object/High_School';
 
 const AppNavigator = createStackNavigator({
     Home:{screen:Home, 
@@ -43,6 +46,9 @@ const AppNavigator = createStackNavigator({
     Park100:{screen:Park100},
     Park300:{screen:Park300},
     Park500:{screen:Park500},
+    Primary_School:{screen:Primary_School},
+    Secondary_School:{screen:Secondary_School},
+    High_School:{screen:High_School},
 },
 {
     defaultNavigationOptions: {
